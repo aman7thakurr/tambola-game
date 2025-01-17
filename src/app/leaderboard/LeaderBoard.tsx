@@ -1,11 +1,22 @@
-import React from 'react'
+import { FC } from 'react';
 
-type Props = {}
-
-const LeaderBoard = (props: Props) => {
-  return (
-    <div>LeaderBoard</div>
-  )
+interface LeaderboardProps {
+  players: string[];
 }
 
-export default LeaderBoard
+const Leaderboard: FC<LeaderboardProps> = ({ players }) => {
+  return (
+    <div className="leaderboard">
+      <h3>Leaderboard</h3>
+      <ul>
+        {players.map((player, index) => (
+          <li key={index}>
+            {index + 1}. {player}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Leaderboard;

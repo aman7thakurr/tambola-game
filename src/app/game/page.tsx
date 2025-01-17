@@ -6,8 +6,8 @@ const GamePage = () => {
   return (
     <div className="game-page">
       <h1>Tambola Game</h1>
-      <GameBoard />
-      <Leaderboard />
+      <GameBoard calledNumbers={[]} />
+      <Leaderboard players={[]} />
     </div>
   );
 };
