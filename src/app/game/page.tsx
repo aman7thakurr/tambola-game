@@ -60,7 +60,7 @@ const GamePage: FC = () => {
   return (
     <div className="game-page p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 min-h-screen">
       <h1 className="text-3xl font-bold mb-6 text-center">Game Board</h1>
-      <div className="game-board flex p-4 rounded-lg shadow-md">
+      <div className="game-board flex flex-col md:flex-row p-4 rounded-lg shadow-md">
         <Leaderboard />
         <GameBoard calledNumbers={calledNumbers} />
       </div>
