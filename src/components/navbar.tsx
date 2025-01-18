@@ -1,48 +1,59 @@
+'use client'
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import { ModeToggle } from './toggle-theme';
 
 const Navbar: FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav className="bg-blue-300 shadow-md">
+    <nav className="bg-gray-200 dark:bg-gray-900 shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <Link href="/" className="text-white text-2xl font-bold">
+        <Link href="/" className="text-gray-900 dark:text-gray-100 text-2xl font-bold">
           Tambola Game
         </Link>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex items-center space-x-6">
           <Link
             href="#about"
-            className="text-white hover:text-blue-200 transition-colors duration-300"
+            className="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
           >
             About
           </Link>
           <Link
             href="#leaderboard"
-            className="text-white hover:text-blue-200 transition-colors duration-300"
+            className="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
           >
             Leaderboard
           </Link>
           <Link
             href="#rooms"
-            className="text-white hover:text-blue-200 transition-colors duration-300"
+            className="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
           >
             Rooms
           </Link>
           <Link
             href="#contact"
-            className="text-white hover:text-blue-200 transition-colors duration-300"
+            className="text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
           >
             Contact
           </Link>
+          <ModeToggle />
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
+          <ModeToggle />
           <button
-            className="text-white focus:outline-none"
+            className="text-gray-900 dark:text-gray-100 focus:outline-none ml-4"
             aria-label="Open Menu"
+            onClick={toggleMenu}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +72,40 @@ const Navbar: FC = () => {
           </button>
         </div>
       </div>
+
+      {/* Mobile Navigation Links */}
+      {isOpen && (
+        <div className="md:hidden bg-gray-200 dark:bg-gray-900 px-4 py-3 space-y-2">
+          <Link
+            href="#about"
+            className="block text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            About
+          </Link>
+          <Link
+            href="#leaderboard"
+            className="block text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            Leaderboard
+          </Link>
+          <Link
+            href="#rooms"
+            className="block text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            Rooms
+          </Link>
+          <Link
+            href="#contact"
+            className="block text-gray-900 dark:text-gray-100 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
+            onClick={toggleMenu}
+          >
+            Contact
+          </Link>
+        </div>
+      )}
     </nav>
   );
 };

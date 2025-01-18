@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tambola Game
+
+Tambola Game is a web application that allows users to play the popular Tambola game. The game includes features such as automated number calling, customizable time intervals, and dark mode support.
+
+## Features
+
+- Automated number calling with customizable time intervals
+- Pause, resume, and restart game functionality
+- Dark mode support
+- Responsive design with a mobile-friendly navigation menu
+- Leaderboard to display top players
+
+## Technologies Used
+
+- React
+- Next.js
+- Zustand for state management
+- Tailwind CSS for styling
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v14 or higher)
+- npm or yarn
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/your-username/tambola-game.git
+   cd tambola-game
+   ```
 
-## Learn More
+2. Install dependencies:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Start the development server:
 
-## Deploy on Vercel
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. Open your browser and navigate to `http://localhost:3000` to see the application in action.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Project Structure
+
+- `src/app/game/page.tsx`: Main game page component that handles the game logic and state management.
+- `src/app/game/GameBoard.tsx`: Game board component that displays the called numbers and game grid.
+- `src/app/leaderboard/LeaderBoard.tsx`: Leaderboard component that displays the top players.
+- `src/components/navbar.tsx`: Navbar component with navigation links and theme toggle.
+- `src/components/toggle-theme.tsx`: Theme toggle component for switching between light and dark modes.
+- `src/store/gameStore.ts`: Zustand store for managing the game state.
+- `src/store/slices/gameSlice.ts`: Zustand slice for the game state.
+
+### Customization
+
+You can customize the game settings and appearance by modifying the following files:
+
+- `src/app/game/page.tsx`: Adjust the default interval time and game logic.
+- `src/components/navbar.tsx`: Update the navigation links and theme toggle.
+- `tailwind.config.js`: Customize the Tailwind CSS configuration.
+
+### Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
