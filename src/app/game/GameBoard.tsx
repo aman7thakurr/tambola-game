@@ -7,7 +7,6 @@ interface GameBoardProps {
 const GameBoard: FC<GameBoardProps> = ({ calledNumbers }) => {
   const generateGrid = () => Array.from({ length: 90 }, (_, i) => i + 1);
 
-  // Filter calledNumbers to ensure unique values
   const uniqueCalledNumbers = Array.from(new Set(calledNumbers));
 
   return (
