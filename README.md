@@ -49,6 +49,9 @@ Tambola Game is a web application that allows users to play the popular Tambola 
    npm run dev
    # or
    yarn dev
+
+   # or
+   pnpm run dev
    ```
 
 2. Open your browser and navigate to `http://localhost:3000` to see the application in action.
