@@ -76,7 +76,7 @@ You can customize the game settings and appearance by modifying the following fi
 
 ### Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
+Contributions are welcome Please open an issue or submit a pull request if you have any improvements or bug fixes.
 
 ### License
 
