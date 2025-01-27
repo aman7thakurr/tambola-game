@@ -22,7 +22,7 @@ Tambola Game is a web application that allows users to play the popular Tambola 
 ### Prerequisites
 
 - Node.js (v14 or higher)
-- npm or yarn or pnpm
+- npm or yarn or pnpm.
 
 ### Installation
 
